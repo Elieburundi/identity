@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Présentation personnelle</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 40px;
+    }
+
+    .accordion-container {
+      max-width: 850px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #1a1a1a;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 25px;
+      font-size: 18px;
+    }
+
+    .accordion {
+      background-color: #e9ecef;
+      color: #000;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion:hover {
+      background-color: #d6d8db;
+    }
+
+    .accordion::after {
+      content: '▾';
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active::after {
+      transform: rotate(180deg);
+    }
+
+    .panel {
+      padding: 0 20px 15px;
+      background-color: #f8f9fa;
+      display: none;
+      overflow: hidden;
+      font-size: 15px;
+      line-height: 1.6;
+      border-left: 3px solid #007BFF;
+      margin-bottom: 5px;
+    }
+
+    .panel p {
+      margin: 10px 0 0;
+    }
+
+    /* Couleurs par section */
+    h3:nth-of-type(1) { background-color: #17a2b8; } /* Informations de base */
+    h3:nth-of-type(2) { background-color: #28a745; } /* Parcours et formation */
+    h3:nth-of-type(3) { background-color: #ffc107; color: #212529; } /* Personnalité */
+    h3:nth-of-type(4) { background-color: #6f42c1; } /* Vision et valeurs */
+  </style>
+</head>
+<body>
+  <div class="accordion-container">
+    <h2>Présentation personnelle</h2>
+
+    <h3>🔹 Informations de base</h3>
+    <button class="accordion">Quel est ton nom complet ?</button>
+    <div class="panel"><p>Je m'appelle NSENGIMANA Elie.</p></div>
+
+    <button class="accordion">Où es-tu né(e) et quand ?</button>
+    <div class="panel"><p>Je suis né à muyinga province Giteranyi commune zone Masaka en 2001. mais dans la nouvelle organisation du gouvernement c'est Province buhumuza commune buhumuza</p></div>
+
+    <button class="accordion">Quelle est ta profession actuelle ou ton domaine d'études ?</button>
+    <div class="panel"><p>Je suis actuellement étudiant en informatique à l’Université du Lac Tanganyika.</p></div>
+
+    <button class="accordion">Dans quelle ville ou région vis-tu actuellement ?</button>
+    <div class="panel"><p>Je vis à Masaka, dans la commune Giteranyi, province de Muyinga.</p></div>
+
+    <button class="accordion">Quelles langues parles-tu ?</button>
+    <div class="panel"><p>Je parle couramment le kirundi, le français, le kiswahili et un peu l’anglais.</p></div>
+
+    <h3>🔹 Parcours et formation</h3>
+    <button class="accordion">Quel est ton parcours scolaire ou universitaire ?</button>
+    <div class="panel"><p>J’ai terminé mes études primaires à l’E.P Masaka, mes études secondaires au lycée communal de Masaka puis au lycée communal de Ruzo, avant d’intégrer l’Université du Lac Tanganyika.</p></div>
+
+    <button class="accordion">Quel métier rêves-tu de faire ou fais-tu actuellement avec passion ?</button>
+    <div class="panel"><p>Je rêve de devenir développeur d’applications et ingénieur en informatique.</p></div>
+
+    <button class="accordion">As-tu suivi des formations ou ateliers en dehors de l’école ?</button>
+    <div class="panel"><p>Oui, j’ai suivi une formation en informatique avec la société TME (Time Multimedia Education) à l’université.</p></div>
+
+    <h3>🔹 Personnalité et intérêts</h3>
+    <button class="accordion">Comment décrirais-tu ta personnalité en 3 mots ?</button>
+    <div class="panel"><p>Sérieux, motivé, curieux.</p></div>
+
+    <button class="accordion">Quelles sont tes passions ou tes loisirs préférés ?</button>
+    <div class="panel"><p>J’aime programmer, lire des articles techniques, et écouter de la musique.</p></div>
+
+    <button class="accordion">Quel est ton plus grand atout ou qualité principale ?</button>
+    <div class="panel"><p>Ma capacité à apprendre rapidement et à résoudre les problèmes de manière logique.</p></div>
+
+    <button class="accordion">Quel défi personnel ou professionnel as-tu surmonté avec fierté ?</button>
+    <div class="panel"><p>J’ai appris seul à développer des sites web et à maîtriser plusieurs langages comme HTML, CSS, PHP et Python.</p></div>
+
+    <h3>🔹 Vision et valeurs</h3>
+    <button class="accordion">Quelles sont les valeurs les plus importantes pour toi dans la vie ?</button>
+    <div class="panel"><p>La vérité, le respect, l’engagement et la persévérance.</p></div>
+
+    <button class="accordion">Quel est ton objectif principal ou rêve dans les prochaines années ?</button>
+    <div class="panel"><p>Créer ma propre entreprise technologique et développer des solutions utiles pour mon pays.</p></div>
+
+    <button class="accordion">Que veux-tu que les autres retiennent de toi ?</button>
+    <div class="panel"><p>Que je suis quelqu’un de fiable, déterminé et passionné par la technologie.</p></div>
+  </div>
+
+  <script>
+    const accordions = document.querySelectorAll(".accordion");
+    accordions.forEach(acc => {
+      acc.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>
