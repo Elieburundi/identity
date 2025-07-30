@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contactez Elie</title>
   <style>
     body {
@@ -11,7 +11,6 @@
       margin: 0;
       padding: 0;
     }
-
     .container {
       max-width: 600px;
       margin: 50px auto;
@@ -20,25 +19,22 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     h2 {
       text-align: center;
       color: #0077cc;
     }
-
     label {
       display: block;
       margin-top: 15px;
     }
-
     input, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
+      box-sizing: border-box;
     }
-
     button {
       margin-top: 20px;
       background-color: #0077cc;
@@ -48,12 +44,11 @@
       border-radius: 5px;
       cursor: pointer;
       width: 100%;
+      font-size: 16px;
     }
-
     button:hover {
       background-color: #005fa3;
     }
-
     footer {
       text-align: center;
       margin-top: 40px;
@@ -64,7 +59,7 @@
 <body>
   <div class="container">
     <h2>Formulaire de contact</h2>
-    <form action="https://formsubmit.co/ireliensengimana@gmail.com" method="POST">
+    <form id="contactForm">
       <label for="nom">Nom :</label>
       <input type="text" id="nom" name="nom" required>
 
@@ -79,17 +74,43 @@
 
       <!-- Anti-spam -->
       <input type="text" name="_honey" style="display:none">
-      <!-- Pas de captcha -->
-      <input type="hidden" name="_captcha" value="false">
-      <!-- Redirection après envoi -->
-      <input type="hidden" name="_next" value="merci.html">
 
-      <button type="submit" name="valider">Envoyer</button>
+      <button type="submit">Envoyer</button>
     </form>
   </div>
 
   <footer>
     © 2025 NSENGIMANA Elie@Burundi
   </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <script>
+    (function(){
+      // Remplace 'user_xxx...' par ton User ID EmailJS
+      emailjs.init('user_xxx...'); 
+    })();
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Anti-spam honeypot
+      if (this._honey.value !== "") {
+        alert("Spam détecté.");
+        return;
+      }
+
+      // Remplace 'service_xxx...' et 'template_xxx...' par tes IDs EmailJS
+      emailjs.sendForm('service_xxx...', 'template_xxx...', this)
+        .then(function() {
+          alert('Email envoyé avec succès ! Merci de votre contact.');
+          document.getElementById('contactForm').reset();
+          // Redirection optionnelle
+          window.location.href = 'merci.html';
+        }, function(error) {
+          alert('Erreur lors de l’envoi : ' + JSON.stringify(error));
+        });
+    });
+  </script>
 </body>
 </html>
