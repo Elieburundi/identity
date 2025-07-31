@@ -90,7 +90,7 @@
     document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      emailjs.sendForm('service_gmail', 'template_xx47a1z', this) // Remplace ici service & template ID
+      emailjs.sendForm('TON_SERVICE_ID', 'TON_TEMPLATE_ID', this) // Remplace ici service & template ID
         .then(function(response) {
           alert('Message envoyé avec succès !');
           document.getElementById("contactForm").reset();
