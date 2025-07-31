@@ -84,13 +84,13 @@
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("5Dk6z4YFF-RZWMn9I"); 
+      emailjs.init("5Dk6z4YFF-RZWMn9I"); // Ta Public Key ici
     })();
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      emailjs.sendForm('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', this)
+      emailjs.sendForm('service_gmail', 'template_xx47a1z', this) // Remplace ici service & template ID
         .then(function(response) {
           alert('Message envoyé avec succès !');
           document.getElementById("contactForm").reset();
