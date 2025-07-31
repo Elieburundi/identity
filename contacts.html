@@ -58,57 +58,44 @@
 </head>
 <body>
   <div class="container">
-    <h2>contact</h2>
+    <h2>Contact</h2>
     <form id="contactForm">
       <label for="nom">Nom :</label>
-      <input type="text" id="nom" name="nom" required>
+      <input type="text" id="nom" name="user_name" required>
 
       <label for="email">Adresse email :</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="user_email" required>
 
       <label for="objet">Objet :</label>
-      <input type="text" id="objet" name="objet" required>
+      <input type="text" id="objet" name="subject" required>
 
       <label for="message">Message :</label>
       <textarea id="message" name="message" rows="6" required></textarea>
-
-      <!-- Anti-spam -->
-      <input type="text" name="_honey" style="display:none">
 
       <button type="submit">Envoyer</button>
     </form>
   </div>
 
   <footer>
-    © 2025 NSENGIMANA Elie@Burundi
+    © 2025 NSENGIMANA Elie @ Burundi
   </footer>
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <!-- EmailJS script -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function(){
-      // Remplace 'user_xxx...' par ton User ID EmailJS
-      emailjs.init('user_xxx...'); 
+      emailjs.init("ireliensengimana@gmail.com"); 
     })();
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Anti-spam honeypot
-      if (this._honey.value !== "") {
-        alert("Spam détecté.");
-        return;
-      }
-
-      // Remplace 'service_xxx...' et 'template_xxx...' par tes IDs EmailJS
-      emailjs.sendForm('service_xxx...', 'template_xxx...', this)
-        .then(function() {
-          alert('Email envoyé avec succès ! Merci de votre contact.');
-          document.getElementById('contactForm').reset();
-          // Redirection optionnelle
-          window.location.href = 'merci.html';
+      emailjs.sendForm('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', this)
+        .then(function(response) {
+          alert('Message envoyé avec succès !');
+          document.getElementById("contactForm").reset();
         }, function(error) {
-          alert('Erreur lors de l’envoi : ' + JSON.stringify(error));
+          alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
         });
     });
   </script>
